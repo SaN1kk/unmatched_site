@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unmatched Website</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<div class="wrapper">
+    <header class = "container"> <!--класс container используется для отступов по бокам-->
+        <img src="img/Logo.png" alt="">
+        <nav>
+            <ul>
+                <li class = "active"><a href = "/">Главная страница</a></li>
+                <li><a href="/about.html">О нас</a></li>
+                <li><a href="/shop.html">Магазин</a></li>
+                <li class = "btn"><a href = "/contacts.html">Контакты</a></li>
+            </ul>
+        </nav> 
+    </header>
+    
+    <div class="hero container">
+        <div class="hero--info">
+            <h2>Restoration Games</h2>
+            <h1>В битве нет равных!</h1>
+            <p>Unmatched — это эпическое сражение между неожиданными соперниками. Выбирайте своего героя из фильмов, комиксов, истории, мифов, легенд и многого другого.</p>
+            <button class = "btn" id = "btn-about">Детали</button>
+        </div>  
+        <img src="img/unmatchedLogo.png" alt="">
+    </div>
+    <div class="container trending">
+        <a href="/shop.html" class = "see-all">Смотреть всё</a>
+        <h3>Новые игры</h3>
+
+        <div class="games">
+            <div class="block">
+                <img src="img/AlivsLee.png" alt="">
+                <span><img src="img/fire.png" alt="">40$</span>
+            </div>
+            <div class="block">
+                <img src="img/bundle.png" alt="">
+                <span><img src="img/fire.png" alt="">100$</span>
+            </div>
+            <div class="block">
+                <img src="img/red.png" alt="">
+                <span><img src="img/fire.png" alt="">40$</span>
+            </div>
+            <div class="block">
+                <img src="img/redemptionrow.png" alt="">
+                <span><img src="img/fire.png" alt="">40$</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container big-text">
+        <p>Каждая игра заслуживает ещё одного шанса.</p>
+    </div>
+    <div class="container banner">
+        <h3>Больше, чем просто игра.</h3>
+        <p>Каждый герой оживает благодаря колоде уникальных карт. Unmatched предлагает потрясающие иллюстрации от лучших художников, детализированные пластиковые 3D-фигурки, уникальные игровые поля, впечатляющие компоненты... и часы захватывающего веселья!</p>
+        <img src="img/Banner.png" alt="">
+    </div>
+
+    <div class="container projects">
+        <h3>Наши недавние проекты</h3>
+        <p>Restoration Games берёт игры 60-х, 70-х, 80-х и 90-х годов, улучшает их и возвращает на рынок для современных игроков, потому что каждая игра заслуживает ещё одного шанса.</p>
+        <div class="images">
+            <img src="img/1.png" alt="">
+            <img src="img/2.png" alt="">
+            <img src="img/3.png" alt="">
+        </div>
+        <div class="images">
+            <img src="img/4.png" alt="">
+            <img src="img/5.png" alt="">
+            <img src="img/6.png" alt="">
+        </div>
+        <a href ="/shop.html" class="see-all">Смотреть всё</a>
+    </div>
+    <!--Создание email формы-->
+    <div class="container email">
+        <h3>Выгодные предложения</h3>
+        <p>Чтобы быть в курсе всех новостей, можете подписаться на нашу рассылку</p>
+        <div class="block">
+            <div>
+                <h4>Спасибо, что выбираете нас!</h4>
+            </div>
+            <div>
+                <input type="email" id="emailField" placeholder = "Введите Ваш email-адрес" autocomplete="off">
+                <button onclick = "checkEmail()">Продолжить</button> <!--подготавливаем для джавы-->
+            </div>
+        </div>
+    </div>
+    <!-- Кнопки для открытия модального окна -->
+<button class = "open-register-modal" id="open-register-modal">Зарегистрироваться</button>
+<button class = "open-login-modal" id="open-login-modal">Войти</button>
+
+<form action="register.php" novalidate method = "post">
+<!-- Модальное окно -->
+<div id="auth-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modal-body">
+            <div id="register-form" class="form-container">
+                <h2>Регистрация</h2>
+                <input type="email" id="register-email" class ="register-email" placeholder="Email"  name ="email" autocomplete="off">
+                <input type="password" id="register-password" placeholder="Password" name = "password">
+                <button class = "register-button" id="register-button" type="register-button">Зарегистрироваться</button>
+            </div>
+            <div id="login-form" class="form-container" style="display: none;">
+                <h2>Авторизация</h2>
+                <input type="email" id="login-email" class = "login-email" placeholder="Email" name ="email" autocomplete="off"> 
+                <input type="password" id="login-password" placeholder="Пароль" name = "password">
+                <button class = "login-button" id="login-button">Войти</button>
+            </div>
+            <button class = "toggle-form" id="toggle-form">Переключить на {{buttonLabel}}</button>
+        </div>
+    </div>
+</div>
+</form>
+</div>
+
+ <footer>
+    <div class="blocks container">
+        <div>
+            <img src="img/Logo.png" alt="">
+        </div>
+        <div>
+            <h4>Restoration Games</h4>
+            <ul>
+                <li id = "link-home"><a href = "/">Главная страница</a></li>
+                <li id = "link-about"><a href="/about.html">О нас</a></li>
+                <li id="link-shop"><a href="/shop.html">Магазин</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Свяжитесь с нами</h4>
+            <p>+908 89097 890</p>
+        </div>
+    </div>
+    <hr>
+    <p>Restoration Games. Все права защищены.</p>
+ </footer>
+
+<script>
+
+document.getElementById('btn-about').addEventListener('click', () => {
+  window.location.href = '/about.html'; // Переход на страницу "О нас"
+});
+
+// Получение элементов модального окна
+const modal = document.getElementById("auth-modal");
+const closeModal = document.querySelector(".close");
+const openRegisterModal = document.getElementById("open-register-modal");
+const openLoginModal = document.getElementById("open-login-modal");
+const toggleFormButton = document.getElementById("toggle-form");
+const registerForm = document.getElementById("register-form");
+const loginForm = document.getElementById("login-form");
+
+// Пример для регистрации
+openRegisterModal.onclick = function() {
+    modal.style.display = "block";
+    registerForm.style.display = "block";
+    loginForm.style.display = "none"; // Скрыть форму логина
+    toggleFormButton.innerText = "Переключить на Авторизацию"; // Измените текст
+};
+
+// Пример для авторизации
+openLoginModal.onclick = function() {
+    modal.style.display = "block";
+    registerForm.style.display = "none"; // Скрыть форму регистрации
+    loginForm.style.display = "block"; // Показать форму авторизации
+    toggleFormButton.innerText = "Переключить на Регистрацию"; // Измените текст
+};
+
+// Закрытие модального окна
+closeModal.onclick = function() {
+    modal.style.display = "none";
+};
+
+// Закрытие модального окна при клике вне его
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
+
+// Переключение между формами
+toggleFormButton.onclick = function() {
+    if (registerForm.style.display === "none") {
+        registerForm.style.display = "block";
+        loginForm.style.display = "none";
+        toggleFormButton.innerText = "Переключить на Авторизацию";
+    } else {
+        registerForm.style.display = "none";
+        loginForm.style.display = "block";
+        toggleFormButton.innerText = "Переключить на Регистрацию";
+    }
+};
+</script>
+<script type="module">
+    // Здесь ваш код
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyBiRsa8vszyTp_2Ey0mc_nInzErDR48umQ",
+        authDomain: "unmatched-920e2.firebaseapp.com",
+        databaseURL: "https://unmatched-920e2-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "unmatched-920e2",
+        storageBucket: "unmatched-920e2.appspot.com",
+        messagingSenderId: "995947949280",
+        appId: "1:995947949280:web:aae2cc907fee86be40b485",
+        measurementId: "G-0YQ2YKMBD3"
+    };
+
+    // Инициализация Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth(app);
+    const db = getFirestore(app); // Инициализация Firestore
+    console.log("Firebase инициализирован:", app);
+
+    const registerUser = async (email, password) => {
+        try {
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+            console.log("Пользователь зарегистрирован:", user);
+
+            // Сохранение пользователя в Firestore
+            await addDoc(collection(db, "users"), {
+                uid: user.uid,
+                email: user.email,
+                createdAt: new Date() // Дата регистрации
+            });
+            console.log("Данные пользователя сохранены в Firestore.");
+        } catch (error) {
+            console.error("Ошибка регистрации:", error.message);
+        }
+    };
+    document.getElementById('login-button').addEventListener('click', () => {
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+    loginUser(email, password);
+});
+    const loginUser = async (email, password) => {
+        try {
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+            console.log("Пользователь авторизован:", user);
+        } catch (error) {
+            console.error("Ошибка входа:", error.message);
+        }
+    };
+</script>
+<script>
+document.getElementById('register-email').addEventListener('input', function() {
+    if (!this.value) {
+        this.setCustomValidity('Email не может быть пустым');
+    } else {
+        this.setCustomValidity('');
+    }
+});
+  document.getElementById('login-email').addEventListener('focus', function() {
+    this.setAttribute('autocomplete', 'new-email');
+});
+
+document.getElementById('register-button').addEventListener('click', function(event) {
+    const emailField = document.getElementById('register-email');
+    const passwordField = document.getElementById('register-password');
+    
+    if (!emailField.value || !passwordField.value) {
+        event.preventDefault(); // Не отправляем форму, если поля пустые
+        alert("Пожалуйста, заполните все поля.");
+    }
+});
+
+function checkEmail(){
+    let email = document.querySelector('#emailField').value;
+    if(!email.includes('@')) alert('Нет символа @');
+    else if(!email.includes('.')) alert('Нет символа .');
+    else alert('Всё отлично!');
+}
+</script>
+</body>
+</html>
